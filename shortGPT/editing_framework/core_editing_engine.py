@@ -12,6 +12,7 @@ from moviepy.editor import (AudioFileClip, CompositeVideoClip,CompositeAudioClip
 from moviepy.audio.fx.audio_loop import audio_loop
 from moviepy.audio.fx.audio_normalize import audio_normalize
 from shortGPT.editing_framework.rendering_logger import MoviepyProgressLogger
+import datetime
 
 def load_schema(json_path):
     return json.loads(open(json_path, 'r', encoding='utf-8').read())
@@ -211,7 +212,10 @@ class CoreEditingEngine:
             raise Exception('You must include at least a size or a fontsize to determine the size of your text')
         text_clip_params['txt'] = text_clip_params['text']
         clip_info = {k: text_clip_params[k] for k in ('txt', 'fontsize', 'font', 'color', 'stroke_width', 'stroke_color', 'size', 'kerning', 'method', 'align') if k in text_clip_params}
-        clip = TextClip(**clip_info)
+        # Get the absolute path of the output file
+        _datetime = datetime.datetime.now().strftime("%Y%m%d")
+        _datetime = _datetime + datetime.datetime.now().strftime("%H%M%S%f")
+        clip = TextClip(**clip_info,tempfilename=f"{_datetime}.png")
 
         return self.process_common_visual_actions(clip, asset['actions'])
 
