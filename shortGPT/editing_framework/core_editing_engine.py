@@ -213,14 +213,8 @@ class CoreEditingEngine:
         text_clip_params['txt'] = text_clip_params['text']
         clip_info = {k: text_clip_params[k] for k in ('txt', 'fontsize', 'font', 'color', 'stroke_width', 'stroke_color', 'size', 'kerning', 'method', 'align') if k in text_clip_params}
         # Get the absolute path of the output file
-        _datetime = datetime.datetime.now().strftime("%Y%m%d")
-        _datetime = _datetime + datetime.datetime.now().strftime("%H%M%S%f")
-        
-
-        with open(f"../../output/{_datetime}.png", "wb") as f:
-            pass
             
-        clip = TextClip(**clip_info,tempfilename=f"../../output/{_datetime}.png")
+        clip = TextClip(**clip_info)
 
         return self.process_common_visual_actions(clip, asset['actions'])
 
