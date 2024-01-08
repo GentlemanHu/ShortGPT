@@ -216,15 +216,11 @@ class CoreEditingEngine:
         _datetime = datetime.datetime.now().strftime("%Y%m%d")
         _datetime = _datetime + datetime.datetime.now().strftime("%H%M%S%f")
         
-        #TODO - delete it, just temp use 检查 /content/tmp 目录是否存在
-        if not os.path.exists("/content/tmp"):
-    # 如果不存在，则创建该目录
-            os.makedirs("/content/tmp")
-        
-        with open(f"/content/tmp/{_datetime}.png", "wb") as f:
+
+        with open(f"../../output/{_datetime}.png", "wb") as f:
             pass
             
-        clip = TextClip(**clip_info,tempfilename=f"/content/tmp/{_datetime}.png")
+        clip = TextClip(**clip_info,tempfilename=f"../../output/{_datetime}.png")
 
         return self.process_common_visual_actions(clip, asset['actions'])
 
