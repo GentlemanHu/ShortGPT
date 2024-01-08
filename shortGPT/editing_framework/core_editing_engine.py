@@ -220,6 +220,9 @@ class CoreEditingEngine:
         if not os.path.exists("/content/tmp"):
     # 如果不存在，则创建该目录
             os.makedirs("/content/tmp")
+        
+        with open(f"/content/tmp/{_datetime}.png", "wb") as f:
+            pass
             
         clip = TextClip(**clip_info,tempfilename=f"/content/tmp/{_datetime}.png")
 
