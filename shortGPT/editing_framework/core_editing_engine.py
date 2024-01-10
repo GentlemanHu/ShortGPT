@@ -211,7 +211,7 @@ class CoreEditingEngine:
         if not (any(key in text_clip_params for key in ['text','fontsize', 'size'])):
             raise Exception('You must include at least a size or a fontsize to determine the size of your text')
         text_clip_params['txt'] = text_clip_params['text']
-        clip_info = {k: text_clip_params[k] for k in ('txt', 'fontsize', 'font', 'color', 'stroke_width', 'stroke_color', 'size', 'kerning', 'method', 'align') if k in text_clip_params}
+        clip_info = {k: text_clip_params[k] for k in ('txt', 'fontsize', 'font', 'color', 'bg_color', 'stroke_width', 'stroke_color', 'size', 'kerning', 'method', 'align') if k in text_clip_params}
         # Get the absolute path of the output file
             
         clip = TextClip(**clip_info)
