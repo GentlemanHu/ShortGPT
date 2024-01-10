@@ -12,7 +12,8 @@
 			"font": "Roboto-Bold",
 			"color": "white",
 			"stroke_width": 2,
-			"stroke_color": "black"
+			"stroke_color": "black",
+			"bg_color": "transparent"
 		},
 		"actions": [
 			{

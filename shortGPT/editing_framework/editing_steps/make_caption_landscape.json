@@ -13,7 +13,8 @@
 			"color": "white",
 			"stroke_width": 3,
 			"stroke_color": "black",
-			"method": "label"
+			"method": "label",
+			"bg_color": "transparent"
 		},
 		"actions": [
 			{

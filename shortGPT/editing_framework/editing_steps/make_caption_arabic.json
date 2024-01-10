@@ -14,6 +14,7 @@
 			"stroke_width": 2,
 			"stroke_color": "black",
 			"method": "caption",
+			"bg_color": "transparent",
 			"size": [
 				900,
 				null
