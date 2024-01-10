@@ -3,7 +3,7 @@
 		"type": "text",
 		"z": 4,
 		"inputs":{
-			"parameters": ["text"],
+			"parameters": ["text","fontsize","font","color","stroke_width","stroke_color","method"],
 			"actions": ["set_time_start", "set_time_end"]
 		},
 		"parameters": {
