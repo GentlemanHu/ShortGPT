@@ -63,7 +63,7 @@ class EditingEngine:
                            ] if 'parameters' in editingStepDict else []
             for arg_name in args:
                 if ('inputs' in editingStepDict):
-                    if 'parameters' in editingStepDict['inputs'] and arg_name in param_names:
+                    if 'parameters' in editingStepDict['inputs'] and arg_name in param_names and args[arg_name] is not None:
                         editingStepDict['parameters'][arg_name] = args[arg_name]
                         pass
                     if 'actions' in editingStepDict['inputs'] and arg_name in action_names:
